@@ -1,0 +1,11 @@
+{
+    "menu": {
+        "romanKingdom": "Roman Kingdom",
+        "romanRepublic": "Roman Republic",
+        "principate": "Principate",
+        "dominate": "Dominate",
+        "fallOfWesternRomanEmpire": "Fall Of Western Roman Empire",
+        "byzantineEmpire": "Byzantine Empire",
+        "quiz": "Quiz"
+    }
+}

@@ -1,0 +1,21 @@
+<div class="quiz-container">
+    <h1>Roman History Quiz</h1>
+    <div class="progress-bar" [style.width]="progressBarWidth"></div>
+    <div class="timer" id="timer">Time Remaining: {{ remainingTime }}s</div>
+    <h2 class="question" id="questionText">{{ currentQuestion?.question }}</h2>
+    <div class="options">
+        <button *ngFor="let option of currentQuestion?.options; let i = index" class="option" (click)="checkAnswer(i)">
+            {{ option }}
+        </button>
+    </div>
+    <div *ngIf="showFeedback">
+        <div class="feedback" id="feedback" [hidden]="!showFeedback">{{ feedbackMessage }}</div>
+        <div class="correct-answer" id="correctAnswer" [hidden]="!showFeedback">Correct Answer: {{ currentQuestion?.options[currentQuestion?.correctAnswer] }}</div>
+        <div class="explanation" id="correctAnswer" [hidden]="!showFeedback">Explanation: {{ currentQuestion?.explanation }}</div>
+        <img *ngIf="currentQuestion?.image" id="questionImage" [src]="'http://localhost:8000/' + currentQuestion.image" alt="Question image">
+    </div>
+    
+    <div class="score" id="score">Score: {{ score }}</div>
+    
+    <button id="nextButton" (click)="loadNextQuestion()">Next</button>
+</div>
